@@ -598,6 +598,7 @@ def executeJob(sc=None, app: PyCryptoBot=None, state: AppState=None, trading_dat
                         Logger.info('--------------------------------------------------------------------------------')
 
                     # display balances
+                    Logger.info('Test')
                     baseCurrency = account.getBalance(app.getBaseCurrency())
                     quoteCurrency = account.getBalance(app.getQuoteCurrency())
                     Logger.info(app.getBaseCurrency() + ' balance before order: ' + str(baseCurrency))
