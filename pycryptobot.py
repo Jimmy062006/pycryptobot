@@ -598,8 +598,10 @@ def executeJob(sc=None, app: PyCryptoBot=None, state: AppState=None, trading_dat
                         Logger.info('--------------------------------------------------------------------------------')
 
                     # display balances
-                    Logger.info(app.getBaseCurrency() + ' balance before order: ' + str(account.getBalance(app.getBaseCurrency())))
-                    Logger.info(app.getQuoteCurrency() + ' balance before order: ' + str(account.getBalance(app.getQuoteCurrency())))
+                    baseCurrency = account.getBalance(app.getBaseCurrency())
+                    quoteCurrency = account.getBalance(app.getQuoteCurrency())
+                    Logger.info(app.getBaseCurrency() + ' balance before order: ' + str(baseCurrency))
+                    Logger.info(app.getQuoteCurrency() + ' balance before order: ' + str(quoteCurrency))
 
                     # execute a live market buy
                     state.last_buy_size = float(account.getBalance(app.getQuoteCurrency()))
